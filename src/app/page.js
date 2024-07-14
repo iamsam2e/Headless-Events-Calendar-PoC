@@ -1,5 +1,5 @@
-import { format, parseISO } from "date-fns";
 import { GET_EVENTS } from "../../lib/queries";
+import { EventCard } from "./components/EventCard";
 
 async function getEvents() {
   const res = await fetch("http://dynamic-calendar-headless.local/graphql", {
@@ -27,21 +27,13 @@ export default async function Home() {
   if (data.errors) return <p>Error: {data.errors[0].message}</p>;
 
   return (
-    <div>
-      <h1>Events Calendar</h1>
-      <ul>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8">Events Calendar</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.data.events.edges.map(({ node }) => (
-          <li key={node.id}>
-            <h2>{node.title}</h2>
-            <p>
-              Date:{" "}
-              {format(parseISO(node.eventDetails.eventDate), "dd/MM/yyyy")}
-            </p>
-            <p>Time: {node.eventDetails.eventTime}</p>
-            <p>Location: {node.eventDetails.location}</p>
-          </li>
+          <EventCard key={node.id} event={node} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
