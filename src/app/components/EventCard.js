@@ -17,25 +17,20 @@ export function EventCard({ event }) {
         <div className="flex items-center space-x-2 mb-2">
           <CalendarIcon className="h-5 w-5 text-gray-500" />
           <span>
-            {event.eventFields && event.eventFields.eventDate
-              ? format(new Date(event.eventFields.eventDate), "dd/MM/yyyy")
+            {event.eventDetails?.eventDate
+              ? format(new Date(event.eventDetails.eventDate), "dd/MM/yyyy")
               : "Date not available"}
           </span>
         </div>
         <div className="flex items-center space-x-2 mb-2">
           <ClockIcon className="h-5 w-5 text-gray-500" />
-          <span>{event.eventFields?.eventTime || "Time not specified"}</span>
+          <span>{event.eventDetails?.eventTime || "Time not specified"}</span>
         </div>
         <div className="flex items-center space-x-2 mb-4">
           <MapPinIcon className="h-5 w-5 text-gray-500" />
-          <span>{event.eventFields?.location || "Location not specified"}</span>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {event.eventCategories?.nodes?.map(({ name, slug }) => (
-            <Badge key={slug} variant="secondary">
-              <a href={`/category/${slug}`}>{name}</a>
-            </Badge>
-          )) || "No categories"}
+          <span>
+            {event.eventDetails?.location || "Location not specified"}
+          </span>
         </div>
       </CardContent>
     </Card>
