@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { GET_EVENTS } from "../../lib/queries";
 import { EventCard } from "./components/EventCard";
 

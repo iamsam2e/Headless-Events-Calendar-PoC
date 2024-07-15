@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { RegistrationForm } from "./RegistrationForm";
 import {
   CalendarIcon,
   ClockIcon,
@@ -32,6 +33,7 @@ export function EventCard({ event }) {
             {event.eventDetails?.location || "Location not specified"}
           </span>
         </div>
+        <RegistrationForm eventId={event.id} eventTitle={event.title} />
       </CardContent>
     </Card>
   );
