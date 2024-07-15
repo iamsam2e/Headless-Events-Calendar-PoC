@@ -1,3 +1,6 @@
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fiamsam2e%2FHeadless-Events-Calendar-PoC&env=REACT_APP_GRAPHQL_URI,EMAIL_HOST,EMAIL_PORT,EMAIL_USER,EMAIL_PASS,SITE_OWNER_EMAIL&demo-title=Headless%20Event%20POC%20with%20ACF&demo-url=https%3A%2F%2Fheadless-events-calendar-po-c.vercel.app%2F)
+
 ## What is this?
 This is a proof of concept I have built to sort of look at alternative things you can build with Headless WordPress - using the right tools and knowledge you can build something that is pretty usable off the shelf to replace something like The Events Calendar in normal WordPress
 
