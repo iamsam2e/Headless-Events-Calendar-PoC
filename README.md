@@ -14,6 +14,16 @@ WP GraphQL
 WP GraphQL for ACF
 Optional -> WP GraphQL Smart Cache for later on
 
+### Email form Submission
+You will need to create a .env file in the front end of the repo with the following fields:
+EMAIL_HOST=smtp.fastmail.com
+EMAIL_PORT=587
+EMAIL_USER=hello@samtoohey.xyz
+EMAIL_PASS=yourpassword
+SITE_OWNER_EMAIL=hello@samtoohey.xyz
+
+I have some as an example above using Fastmail but I have tested this also with gmail, so you should have it able to work with most smtp providers. 
+
 ### Working the Repo.
 Pull the front end down to your machine and change the WordPress URL to your backend site.
 `npm run dev` to test it on your local machine and you should be able to push it to Vercel or Railway when you're finished making changes 
@@ -21,6 +31,7 @@ Pull the front end down to your machine and change the WordPress URL to your bac
 WordPress wise, you need to create a custom post type called Event Details (I used CPT UI from WebDevStudios), and make sure it can accept Custom Fields, as well as is exposed to GraphQL
 
 Field Groups you need to makea new Group called Event Details and copy what I have done in the screenshot - I started with Date, Time and Location but you can add more if you like, and check to make sure Post Type is Equal to Event in the settings tab
+
 
 That should be it! Have fun and enjoy breaking it!
 
