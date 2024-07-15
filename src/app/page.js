@@ -2,8 +2,11 @@ import { format } from "date-fns";
 import { GET_EVENTS } from "../../lib/queries";
 import { EventCard } from "./components/EventCard";
 
+// Load environment variables from .env file
+const graphqlUri = process.env.REACT_APP_GRAPHQL_URI;
+
 async function getEvents() {
-  const res = await fetch("http://dynamic-calendar-headless.local/graphql", {
+  const res = await fetch(graphqlUri, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
